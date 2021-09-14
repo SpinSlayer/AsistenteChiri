@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Navbar</title>
+    <link rel="stylesheet" href="navbar.css">
+</head>
+<body>
+    <nav>
+        <button class="nav-boton" onclick="accion()">Menu</button>
+        <a href="#" class="nav-enlace desaparece">Calendario</a>
+        <a href="#" class="nav-enlace desaparece">Pizarra</a>
+        <a class="nav-enlace desaparece"><button class="nav-boton2" onclick="accion2()" >Usuario</button></a>
+        <a href="#" class="nav-enlace2 desaparece2">Datos</a>
+        <a href="#" class="nav-enlace2 desaparece2">Ajustes</a>
+        <a href="#" class="nav-enlace2 desaparece2">Cerrar Sesion</a>
+    </nav>
+        
+    <script>
+    function accion() {
+        console.log('Esta funcionando mi boton');
+        var ancla = document.getElementsByClassName('nav-enlace');
+        for (var i = 0; i < ancla.length; i++) {
+            ancla[i].classList.toggle('desaparece');
+        }
+    }
+    
+    function accion2() {
+        console.log('Esta funcionando mi boton');
+        var ancla2 = document.getElementsByClassName('nav-enlace2');
+        for (var i = 0; i < ancla2.length; i++) {
+            ancla2[i].classList.toggle('desaparece2');
+        }
+    }
+    </script>
+
+<script>
+    function showNotification() {
+         const notification = new Notification("Recordatorio!", {
+            body: "Entrar a la clase de Software 2",
+            icon: "alexa.ico"
+         });
+         
+         notification.onclick = (e) => {
+             window.location.href = "https://www.ulima.edu.pe";
+         };
+    }
+ 
+    // default, granted, denied
+    console.log(Notification.permission);
+    
+    if (Notification.permission === "granted") {
+        showNotification();
+    } else if (Notification.permission !== "denied") {
+        Notification.requestPermission().then(permission => {
+            if (permission === "granted") {
+                showNotification();
+            }
+        });
+    }
+</script>
+</body>
+</html>
