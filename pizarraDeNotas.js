@@ -22,7 +22,7 @@ function crearNota(){
     nota.className='col'
     
     const formatoNota=document.createElement('div')
-    nota.className='card '
+    nota.className='card h-100'
 
     const cardBody = document.createElement('div')
     cardBody.className = 'card-body bg-light'
@@ -46,6 +46,7 @@ function crearNota(){
     fragment.appendChild(nota)  
     if(!lista_notas.hasChildNodes()) lista_notas.appendChild(fragment)
     else lista_notas.insertBefore(fragment,lista_notas.children[0])
+    
     nota.appendChild(formatoNota)
     formatoNota.appendChild(cardBody)
     cardBody.appendChild(title)
