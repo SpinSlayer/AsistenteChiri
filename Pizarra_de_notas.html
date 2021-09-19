@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba Pantalla Pizarra_de_notas</title>
+    <!--BOOTSTRAP-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <!--Iconos-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <!--CSS-->
+    <link rel="stylesheet" href="pizarraStyle.css">
+    <!--Tipografía-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caramel&family=Dancing+Script&display=swap" rel="stylesheet">
+</head>
+<body  id= "bg-principal" class="container " >
+    <div class="row">
+        <div class="col-11">
+            <!--Lista de Notas-->
+            <div class="container">
+                <div id="lista_notas" class=" row row-cols-1 row-cols-md-3 g-4">
+                    <!--Aquí van las notas-->
+                </div>
+            </div>
+            
+        </div>
+        
+        
+        <!--Botones de notas-->
+        <div id="btn_notas" class="col-1 mt-2">
+            <!--Boton Agregar-->
+            <button id="btnAdd" type="button" class=" btn btn-primary material-icons-outlined mb-2" data-bs-toggle="modal" data-bs-target="#agregar">
+                add_circle
+            </button>
+            
+    
+            <!--Boton Borrar-->
+            <button id="btnDelete" type="button" class=" btn btn-primary material-icons-outlined mb-2">
+                delete
+            </button>
+            
+    
+            <!--Boton Filtrar-->
+            <button id="btnFilter" type="button" class=" btn btn-primary material-icons-outlined mb-2">
+                filter_alt</button>
+        </div>
+
+        <!-- Modal  Formulario Agregar-->
+        <div class="modal fadec " id="agregar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content " id="modal_nueva_nota">
+                    <div class="modal-header">
+                        <div class="col-11">
+                            <h4 class="modal-title text-center" id="exampleModalLabel">NUEVA NOTA</h4>
+                        </div>
+                        <div class="col-1">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+
+                        <!--Titulo de la nota-->
+                        <div class="mb-3">
+                            <label for="tituloNota" class="form-label "><h4 >Título de la nota</h4></label>
+                            <input type="text" class="form-control" id="tituloNota">
+                        </div>
+
+                        <!--Contenido de la nota-->
+                        <div class="mb-3">
+                            <label for="contenidoNota" class="form-label"><h4>Contenido de la nota</h4></label>
+                            <textarea class="form-control" id="contenidoNota" rows="3"></textarea>
+                        </div>
+
+                        <!--Categoría de la nota-->
+                        <select id="categoriaNota" class="form-select fs-5 " aria-label="Default select example">
+                            <option selected disabled>Seleccionar una categoría</option>
+                        </select>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                        <button id="creaNota" type="button" class="btn btn-primary" data-bs-dismiss="modal">Guardar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="pizarraDeNotas.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+</body>

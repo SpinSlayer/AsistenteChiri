@@ -1,0 +1,23 @@
+#btn_notas
+{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+#bg-principal
+{
+    background-image: url(fondo_pizarra.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin:10px auto;
+    display:block;
+}
+#modal_nueva_nota
+{
+    background-color: #cfcfcf;
+}
+body{
+    font-family: 'Dancing Script', cursive;
+}
+
