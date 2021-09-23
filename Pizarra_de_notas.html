@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -15,34 +15,43 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caramel&family=Dancing+Script&display=swap" rel="stylesheet">
+    <!--moment.js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" referrerpolicy="no-referrer"></script>
 </head>
-<body  id= "bg-principal" class="container " >
-    <div class="row">
-        <div class="col-11">
-            <!--Lista de Notas-->
+<body  id= "bg-principal" class="container" >
+    <div class="row ">
+        <!--Lista de Notas-->
+        <div class="col-11 ">
+
             <div id="lista_notas" class=" row row-cols-1 row-cols-md-3 g-4 ">
                 <!--Aquí van las notas-->
             </div>
+
         </div>
         
-        
         <!--Botones de notas-->
-        <div id="btn_notas" class="col-1 mt-2">
-            <!--Boton Agregar-->
-            <button id="btnAdd" type="button" class=" btn btn-primary material-icons-outlined mb-2" data-bs-toggle="modal" data-bs-target="#agregar">
-                add_circle
-            </button>
-            
-    
-            <!--Boton Borrar-->
-            <button id="btnDelete" type="button" class=" btn btn-primary material-icons-outlined mb-2">
-                delete
-            </button>
-            
-    
+        <div id="btn_notas" class="col-1  ">
             <!--Boton Filtrar-->
-            <button id="btnFilter" type="button" class=" btn btn-primary material-icons-outlined mb-2">
-                filter_alt</button>
+            <div>                
+                <button id="btn_filter" class=" btn btn-primary btn-lg material-icons-outlined">
+                    filter_alt
+                </button>
+            </div>
+            
+            <!--Boton Agregar--> 
+            <div >
+                <button id="btnAdd"     class=" btn btn-primary btn-lg material-icons-outlined " data-bs-toggle="modal" data-bs-target="#agregar">
+                    add_circle
+                </button>
+            </div>
+
+            <!--Boton Borrar-->
+            <div >
+                <button id="btnDelete"  class=" btn btn-primary btn-lg material-icons-outlined ">
+                    delete
+                </button>
+            </div>
+            
         </div>
 
         <!-- Modal  Formulario Agregar-->
@@ -62,13 +71,13 @@
                         <!--Titulo de la nota-->
                         <div class="mb-3">
                             <label for="tituloNota" class="form-label "><h4 >Título de la nota</h4></label>
-                            <input type="text" class="form-control" id="tituloNota">
+                            <input type="text" class="form-control fs-4 " id="tituloNota">
                         </div>
 
                         <!--Contenido de la nota-->
                         <div class="mb-3">
                             <label for="contenidoNota" class="form-label"><h4>Contenido de la nota</h4></label>
-                            <textarea class="form-control" id="contenidoNota" rows="3"></textarea>
+                            <textarea class="form-control fs-4" id="contenidoNota" rows="3"></textarea>
                         </div>
 
                         <!--Categoría de la nota-->
