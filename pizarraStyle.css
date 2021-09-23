@@ -1,18 +1,32 @@
-#btn_notas
+#btn_filter
+{
+    position: fixed;
+    top: 20px;
+    right: 0px;
+}
+#btnAdd
 {
     position: fixed;
     bottom: 20px;
-    right: 20px;
+    right: 0px;
+}
+#btnDelete
+{
+    position: fixed;
+    bottom: 20px;
+    left: 0px;
 }
 #bg-principal
 {
+   
     background-image: url(fondo_pizarra.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: 50%;
     background-attachment: fixed;
     margin:10px auto;
     display:block;
-}
+} 
 #modal_nueva_nota
 {
     background-color: #cfcfcf;
