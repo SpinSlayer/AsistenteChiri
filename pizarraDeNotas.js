@@ -14,9 +14,12 @@ var content=""
 var modificado=""
 var categ=""
 var cont_cajas=0
+var temp={}
 
 //CREAR NOTA
 function crearNota(){
+    
+   
     var now = moment();//Se caputar el momento
 
     cont_cajas++
@@ -28,6 +31,7 @@ function crearNota(){
     nota.id='caja'+(cont_cajas).toString()
     nota.className='col lista_de_cartas'
     nota.draggable=true
+    nota.onmouseenter = ()=>{ temp[0]=(nota.id) }; 
     
     const formatoNota=document.createElement('div')
     formatoNota.className='card h-100'
@@ -35,26 +39,26 @@ function crearNota(){
     const cardBody = document.createElement('div')
     cardBody.className = 'card-body bg-light'
 
-    const title = document.createElement('h3')
+    const title = document.createElement('h2')
     title.innerText = titulo
     title.className = 'card-title'
     
     const contenido =document.createElement('p')
     contenido.innerText=content
-    contenido.className='card-text fs-4'
+    contenido.className='card-text fs-5'
     contenido.style='word-wrap:break-word'
 
     const cardFooter = document.createElement('div')
     cardFooter.className = 'card-footer '
-    cardFooter.style = 'background-color: rgb(200, 226, 206); '
+    cardFooter.style = 'background-color: rgba(135, 149, 221, 0.87)'
 
     const small = document.createElement('small')
     small.innerText=now.fromNow()
     small.className = 'text-dark'
 
     fragment.appendChild(nota)  
-    if(!lista_notas.hasChildNodes()) lista_notas.appendChild(fragment)
-    else lista_notas.insertBefore(fragment,lista_notas.children[0])
+    if(!lista_notas.hasChildNodes()) lista_notas.appendChild(nota)
+    else lista_notas.insertBefore(nota,lista_notas.children[0])
     
     nota.appendChild(formatoNota)
     formatoNota.appendChild(cardBody)
@@ -64,7 +68,8 @@ function crearNota(){
     cardFooter.appendChild(small)
 
     document.getElementById("tituloNota").value=""
-    document.getElementById("contenidoNota").value=""    
+    document.getElementById("contenidoNota").value=""
+    
 }
 crear_nota.addEventListener('click',crearNota,true)
 
@@ -85,17 +90,10 @@ categ_form.appendChild(fragment2)
 //drag and drop de los cards
 btn_borrar.addEventListener('dragover', e=>
 {
-    this.addEventListener('dragenter',console.log(this.Element.id),true)
-});
+})
 btn_borrar.addEventListener('dragleave', e=>
 {        
-    console.log('Drag leave')    
-});
-
-
-
-
-
-
-
-
+    console.log(temp[0])
+    var x= document.getElementById(temp[0])
+    lista_notas.removeChild(x)    
+})

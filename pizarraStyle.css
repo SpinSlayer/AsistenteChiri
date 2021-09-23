@@ -1,9 +1,9 @@
-#btn_filter
+ #btn_filter
 {
     position: fixed;
-    top: 20px;
+    bottom: 65px;
     right: 0px;
-}
+} 
 #btnAdd
 {
     position: fixed;
@@ -29,9 +29,9 @@
 } 
 #modal_nueva_nota
 {
-    background-color: #cfcfcf;
+    background-color: #e7e7e78a;
 }
 body{
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Scheherazade New', serif;
 }
 
