@@ -4,51 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu Asistente Chiri - Bootstrap</title>
-        
+    <link rel="stylesheet" href="navbar.css">  
     <link href="./css/bootstrap.min.css" rel="stylesheet">
-
-
 </head>
- <body>
-    <div class="container-fluid">
-        <!--  Barra de Navegación-->
-        <nav class="navbar navbar-expand-md navbar-light border-3 border-bottom border-primary" style="background-color: #0784fa">
-            <div class="container-fluid">
-                <a href="#" class="navbar-brand">CalendarioChiri</a>
-                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#MenuNavegacion">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div id="MenuNavegacion" class="collapse navbar-collapse">
-                    <ul class="navbar-nav ms-3">
-                        <li class="nav-item"><a class="nav-link" href="#">Pizarra</a></li>
-                        <li class="nav-item-dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                                Usuario
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Datos de Usuario</a></li>
-                                <li><a class="dropdown-item" href="#">Ajustes</a></li>
-                                <li><a class="dropdown-item" href="#">Cerrar Sesion</a></li>
-                            </ul>
-                        </li>
-                    </ul>
+ <body class="darkmode">
+     <header>
+        <div class="container-fluid">
+            <!--  Barra de Navegación-->
+            <nav class="navbar navbar-expand-md navbar-light border-3 border-bottom border-primary" style="background-color: #B0E0E6">
+                <div class="container-fluid">
+                    <a href="#" class="navbar-brand">CalendarioChiri</a>
+                    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#MenuNavegacion">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div id="MenuNavegacion" class="collapse navbar-collapse">
+                        <ul class="navbar-nav ms-3">
+                            <li class="nav-item"><a class="nav-link" href="#">Pizarra</a></li>
+                            <li class="nav-item-dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                    Usuario
+                                </a>
+                                <ul class="dropdown-menu border-3 border-primary" style="background-color: #B0E0E6;">
+                                    <li><a class="dropdown-item" href="#">Datos de Usuario</a></li>
+                                    <li><a class="dropdown-item" href="#">Ajustes</a></li>
+                                    <li><a class="dropdown-item" href="#">Cerrar Sesion</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </nav>
-    </div>
+            </nav>
+        </div>
+        <div>
+            <button id="bdark">Modo Oscuro</button>
+        </div>
+     </header>
+     <main>
+        
+    </main>
+
+    <script>
+        const bdark = document.querySelector('#bdark');
+        const body = document.querySelector('body');
+
+        load();
+
+        bdark.addEventListener('click', e=>{
+            body.classList.toggle('darkmode');
+            store(body.classList.contains('darkmode'));
+        });
+
+        function load(){
+            const darkmode = localStorage.getItem('darkmode');
+
+            if(!darkmode){
+                store('false');
+            } else if (darkmode == 'true'){
+                body.classList.add('darkmode');
+            }
+        }
+
+        function store(value){
+            localStorage.setItem('darkmode', value);
+        }
+    </script>
 
     <script src="./js/bootstrap.bundle.min.js"></script>
-    
+
     <script>
         function showNotification() {
-             const notification = new Notification("Recordatorio!", {
-                body: "Entrar a la clase de Software 2",
+            const notification = new Notification("Asistente Chiri", {
+                body: "Bienvenido a tu asistente personalizado",
                 icon: "alexa.ico"
-             });
-             
-             notification.onclick = (e) => {
-                 window.location.href = "https://www.ulima.edu.pe";
-             };
+            }) 
         }
      
         // default, granted, denied
@@ -64,6 +92,5 @@
             });
         }
     </script>
-    
  </body>
 </html>
