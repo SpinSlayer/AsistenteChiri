@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('fondo.jpg');
+}
+
+.form-settings {
+    width: 400px;
+    background: #24303c;
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 4px;
+    font-family: 'calibri';
+    color: white;
+    box-shadow: 7px 13px 37px #000;
+
+}
+
+.form-settings h4 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-settings h5 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.form-settings .desplegable{
+    width: 100%;
+    background: #1f53c5;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 16px 0;
+    font-size: 16px;
+}

@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Quicksand",sans-serif;
+}
+html {
+    font-size: 62.5%;
+}
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: azure;
+}
+.calendar {
+    width: 45rem;
+    height: 52rem;
+    background-color: #222227;
+    box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.4);
+    border-radius: 20px 0px 0px 20px;
+}
+.espacioNotas {
+    width: 45rem;
+    height: 52rem;
+    background-color: #dcdee0e1;
+    box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.4);
+    border-radius: 0px 20px 20px 0px;
+}
+
+.month {
+    width: 100%;
+    height: 12rem;
+    background-color: #165d7e;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    text-align: center;
+    text-shadow: 0 0.3rem .5rem rgba(0, 0, 0, 0.5);
+    border-radius: 20px 0px  0px 0px;
+}
+
+.month i {
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+.month h1 {
+    font-size: 3rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    margin-bottom: 1rem;
+}
+
+.month p {
+    font-size: 1.6rem;
+}
+.weekdays {
+    width: 100%;
+    height: 5rem;
+    padding: 0 0.04rem;
+    display: flex;
+    align-items: center;
+}
+.weekdays div {
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: .1rem;
+    width: calc(44.2rem/7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 0 .3rem .5rem rgba(0, 0, 0, 0.5);
+}
+.days {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: .2rem;
+}
+.days div {
+    font-size: 1.4rem;
+    margin: .3rem;
+    width: calc(40.2rem/7);
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 0 .3rem .5rem rgba(0, 0, 0, 0.5);
+    transition: background-color 0.2s;
+}
+.days div:hover:not(.today) {
+    background-color: #262626;
+    border: .2rem solid #777;
+}
+.prev-date,.next-date {
+    opacity: 0.5;
+}
+.today {
+    background-color: #165d7e;
+}
+.espacioNotas ul, .anadirNotas {
+    position: relative;
+    color: black;
+}
+.anadirNotas {
+    text-align: left;
+    margin: 10px 80px 10px 80px;
+}
+.espacioNotas ul {
+    padding-left: 30px;
+    list-style: none;
+    margin-top: 10px;
+    height: 85%;
+    overflow: auto;
+    margin-left: 40px;
+    line-height: 200%;
+    font-size: 15px;
+}
+.espacioNotas ul li::before {
+    position: absolute;
+    left: 10px;
+}
+.anadirNotas {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.507);
+}
+.anadirNotas span {
+    font-size: 3.5rem;
+    cursor: pointer;
+    color: #165d7e;
+    padding-bottom: 2rem;
+}
+.anadirNotas input {
+    border: none;
+    background: transparent;
+    height: 28px;
+    width: 100%;
+    font-size: 16px;
+    padding-right: 30px;
+}
+.anadirNotas input:focus {
+    outline: none;
+}
+.anadirNotas input::placeholder {
+    color: #222227be;
+}
+.anadirNotas span {
+    left: inherit;
+    line-height: 34px;
+}
+#modal_nueva_nota {
+    color: black;
+}
+#selectTiempo {
+    width: 100%;
+    color: gray;
+}
