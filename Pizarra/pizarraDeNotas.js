@@ -6,7 +6,7 @@ const btn_borrar = document.getElementById('btnDelete')
 const fragment = document.createDocumentFragment()
 const fragment2 = document.createDocumentFragment()
 const categorias =["Trabajo","Estudio","Lista de compras", "Deberes", "Deporte", "Música", "Salud", "Viaje","Libro","Restaurante"]
-
+const bd_notas=[]
 
 
 var titulo=""
@@ -26,10 +26,20 @@ function crearNota(){
     titulo= document.getElementById("tituloNota").value
     content= document.getElementById("contenidoNota").value
     categ=document.getElementById("categoriaNota").value
+    /*
+    nota_creada=
+    {
+        "titulo": titulo,
+        "content": content,
+        "categ":categ
+    }
+    bd_notas.push(nota_creada)*/
+    
+    
     
     const nota= document.createElement('div')
     nota.id='caja'+(cont_cajas).toString()
-    nota.className='col lista_de_cartas'
+    nota.className='col lista_de_cartas '+categ
     nota.draggable=true
     nota.onmouseenter = ()=>{ temp[0]=(nota.id) }; 
     

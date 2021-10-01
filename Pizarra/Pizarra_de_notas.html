@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Prueba Pantalla Pizarra_de_notas</title>
     <!--BOOTSTRAP-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
@@ -17,6 +18,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Scheherazade+New&display=swap" rel="stylesheet">
     <!--moment.js-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" referrerpolicy="no-referrer"></script>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
 </head>
 <body  id= "bg-principal" class="container" >
     <div class="row ">
@@ -32,11 +34,26 @@
         <!--Botones de notas-->
         <div id="btn_notas" class="col-1  ">
             <!--Boton Filtrar-->
-            <div>                
-                <button id="btn_filter" class=" btn btn-primary btn-lg material-icons-outlined">
-                    filter_alt
+           
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                  Categorias
                 </button>
-            </div>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  <li><a class="dropdown-item" href="#" onclick="filterObjets('all')">Mostrar Todo</a></li>
+                  <li><a class="dropdown-item" href="#" onclick="filterObjets('trabajo')">Trabajo</a></li>
+                  <li><a class="dropdown-item" href="#" onclick="filterObjets('lista de compras')">Lista de compras</a></li>
+                  <li><a class="dropdown-item" href="#" onclick="filterObjets('estudio')">Estudio</a></li>
+                  <li><a class="dropdown-item" href="#" onclick="filterObjets('deberes')">Deberes</a></li>
+                  <li><a class="dropdown-item" href="#" onclick="filterObjets('deporte')">Deporte</a></li>
+                  <li><a class="dropdown-item" href="#" onclick="filterObjets('música')">Música</a></li>
+                  <li><a class="dropdown-item" href="#" onclick="filterObjets('salud')">Salud</a></li>
+                  <li><a class="dropdown-item" href="#" onclick="filterObjets('viaje')">Viaje</a></li>
+                  <li><a class="dropdown-item" href="#" onclick="filterObjets('libro')">Libro</a></li>
+                  <li><a class="dropdown-item" href="#"onclick="filterObjets('restaurante')" >Restaurante</a></li>
+
+                </ul>
+              </div>
             
             <!--Boton Agregar--> 
             <div >
@@ -96,5 +113,9 @@
 
     </div>
     <script src="pizarraDeNotas.js"></script>
+    <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
