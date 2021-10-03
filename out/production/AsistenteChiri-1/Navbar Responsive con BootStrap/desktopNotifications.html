@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Notificaciones</h1>
+        <ul class="tsummary">
+            <li>usamos el asistente virtual para enviar notificaciones al escritorio</li>
+            <li>solo funciona en contexto seguro (https)</li>
+        </ul>
+        <script>
+            function showNotification() {
+                 const notification = new Notification("Recordatorio!", {
+                    body: "Entrar a la clase de Software 2",
+                    icon: "alexa.ico"
+                 });
+                 
+                 notification.onclick = (e) => {
+                     window.location.href = "https://www.ulima.edu.pe";
+                 };
+            }
+         
+            // default, granted, denied
+            console.log(Notification.permission);
+            
+            if (Notification.permission === "granted") {
+                showNotification();
+            } else if (Notification.permission !== "denied") {
+                Notification.requestPermission().then(permission => {
+                    if (permission === "granted") {
+                        showNotification();
+                    }
+                });
+            }
+        </script>
+    </body>
+</html>

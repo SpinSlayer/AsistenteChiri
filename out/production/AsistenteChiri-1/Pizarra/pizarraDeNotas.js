@@ -58,60 +58,21 @@ function crearNota(){
     document.getElementById("tituloNota").value=""
     document.getElementById("contenidoNota").value=""
     console.log(categ)
-    const toSend = {
-        titulo: title.innerText,
-        contenido: contenido.innerText, 
-        categoria: categ, 
-        prioridad: ""
-    
-    
-    };
-    
-    const jsonString = JSON.stringify(toSend);
-    var fs = require('fs');
-    fs.writeFile("thing.json", jsonString, function(err, result) {
-    if(err) console.log('error', err);
-});
-    console.log(jsonString);
-    //const xhr = new XMLHttpRequest();
 
-    /*xhr.open("POST","/AsistenteChiri-1/Pizarra");
-    xhr.setRequestHeader("Content.type", "application/json");
-    xhr.send(jsonString);*/
-
-    $.ajax({
-            type: 'GET',
-            url: 'Pizarra_de_notas.html',
-            dataType: 'json',
-            data: {titulo: title.innerText, contenido: contenido.innerText, categoria: categ, prioridad: ""}
-            
-        
-});
-
-
-   
+    /*
+    $('#btnNotaAceptar').click(function () {
     
-    
+                        $.ajax({
+                                    type: 'POST',
+                                    url: '',
+                                    dataType: 'json',
+                                    data: {idSolicitudCA:idDocumento,notaAnulacion:$('#nota_anular').val()},
+                                    
+                                
+                                }
+                        });*/
 }
-                        
-
 crear_nota.addEventListener('click',crearNota,true)
-
-
-/*
-$('#creaNota').on("click", function(){
-    
-    
-    $.ajax({
-        type: 'POST',
-        url: 'C:/Users/Master/IdeaProjects/AsistenteChiri',
-        dataType: 'json',
-        data: {titulo: title.innerText, contenido: contenido.innerText, categoria: categ, prioridad: ""}
-        
-    
-    });
-    
-});*/
 
 //CARGAR CATEGORIAS DEL FORMULARIO
 
