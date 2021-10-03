@@ -79,7 +79,6 @@ function crearNota(){
 
     document.getElementById("tituloNota").value=""
     document.getElementById("contenidoNota").value=""
-<<<<<<< HEAD
     console.log(categ)
     const toSend = {
         titulo: title.innerText,
@@ -111,8 +110,6 @@ function crearNota(){
 
    
     
-=======
->>>>>>> c587642fe73e2ad29fb5f445d045af88bbb42058
     
 }
                         
@@ -120,7 +117,6 @@ function crearNota(){
 crear_nota.addEventListener('click',crearNota,true)
 
 
-<<<<<<< HEAD
 /*
 $('#creaNota').on("click", function(){
     
@@ -136,8 +132,6 @@ $('#creaNota').on("click", function(){
     
 });*/
 
-=======
->>>>>>> c587642fe73e2ad29fb5f445d045af88bbb42058
 //CARGAR CATEGORIAS DEL FORMULARIO
 
 for(const c of categorias)
