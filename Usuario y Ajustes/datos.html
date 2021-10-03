@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="datos.css">
+  <link href="./css/bootstrap.min.css" rel="stylesheet">
+  <title>Formulario Registro</title>
+</head>
+<body class="darkmode">
+  <header>
+    <div class="container-fluid">
+        <!--  Barra de Navegación-->
+        <nav class="navbar navbar-expand-md navbar-light border-3 border-bottom border-primary" style="background-color: #B0E0E6">
+            <div class="container-fluid">
+                <a href="http://127.0.0.1:5500/calendario_con_notas/calendar.html#" class="navbar-brand">CalendarioChiri</a>
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#MenuNavegacion">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div id="MenuNavegacion" class="collapse navbar-collapse">
+                    <ul class="navbar-nav ms-3">
+                        <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5500/Pizarra/Pizarra_de_notas.html">Pizarra</a></li>
+                        <li class="nav-item-dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                Usuario
+                            </a>
+                            <ul class="dropdown-menu border-3 border-primary" style="background-color: #B0E0E6;">
+                                <li><a class="dropdown-item" href="http://127.0.0.1:5500/Usuario%20y%20Ajustes/datos.html">Datos de Usuario</a></li>
+                                <li><a class="dropdown-item" href="http://127.0.0.1:5500/Usuario%20y%20Ajustes/ajustes.html">Ajustes</a></li>
+                                <li><a class="dropdown-item" href="#">Cerrar Sesion</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div>
+        <button id="bdark">Modo Oscuro</button>
+    </div>
+ </header>
+  <section class="form-changes">
+    <h4>Formulario Cambio de Datos</h4>
+    <input class="controls" type="text" name="nombres" id="nombres" placeholder="Ingrese su Nombre">
+    <input class="controls" type="text" name="apellidos" id="apellidos" placeholder="Ingrese su Apellido">
+    <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su Correo">
+    <input class="controls" type="password" name="contraseña" id="contraseña" placeholder="Ingrese su Contraseña">
+    <input class="botons" type="submit" value="Cambiar datos">
+  </section>
+
+
+<script src="/calendario_con_notas/darkmode.js"></script>
+<script src="./js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

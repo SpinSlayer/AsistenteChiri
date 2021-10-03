@@ -1,23 +1,59 @@
-#btn_notas
+*{
+    
+    font-family: "Quicksand",sans-serif;
+}
+#btn_filter
+{
+    position: fixed;
+    bottom: 65px;
+    right: 0px;
+} 
+#btnAdd
 {
     position: fixed;
     bottom: 20px;
-    right: 20px;
+    right: 0px;
+}
+#dropdownMenuButton1
+{
+    position: fixed;
+    bottom: 100px;
+    right: 0px;
+    background-color: rgb(0, 110, 255);
+}
+#btnDelete
+{
+    position: fixed;
+    bottom: 20px;
+    left: 0px;
 }
 #bg-principal
 {
-    background-image: url(fondo_pizarra.jpg);
+
+    background-image: url(fondo.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: 50%;
     background-attachment: fixed;
     margin:10px auto;
     display:block;
 }
+.show{
+    display: block !important;
+}
+.none {
+    display: none;
+}
 #modal_nueva_nota
 {
-    background-color: #cfcfcf;
+    background-color: #e7e7e78a;
 }
-body{
-    font-family: 'Dancing Script', cursive;
+
+header {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    top: 0px;
+    right: 0%;
 }
 
