@@ -35,7 +35,6 @@
     background-size: cover;
     background-position: 50%;
     background-attachment: fixed;
-    margin:10px auto;
     display:block;
 }
 .show{
@@ -51,9 +50,9 @@
 
 header {
     position: absolute;
-    display: flex;
     width: 100%;
     top: 0px;
     right: 0%;
 }
+.material-icons-outlined.dark { color: #000000; }
 

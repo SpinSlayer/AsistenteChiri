@@ -3,13 +3,18 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Quicksand",sans-serif;
+    
 }
 html {
     font-size: 62.5%;
 }
 .container {
-    width: 100%;
-    height: 100vh;
+    /*centrado*/
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    /**/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,6 +26,7 @@ html {
     background-color: #222227;
     box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.4);
     border-radius: 20px 0px 0px 20px;
+    
 }
 .espacioNotas {
     width: 45rem;
@@ -159,3 +165,5 @@ html {
     width: 100%;
     color: gray;
 }
+
+.material-icons-outlined.dark { color: #000000; }

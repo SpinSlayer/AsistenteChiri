@@ -51,11 +51,11 @@ function crearNota(){
 
     const title = document.createElement('h2')
     title.innerText = titulo
-    title.className = 'card-title'
+    title.className = 'card-title text-dark'
     
     const contenido =document.createElement('p')
     contenido.innerText=content
-    contenido.className='card-text fs-5'
+    contenido.className='card-text fs-5 text-dark'
     contenido.style='word-wrap:break-word'
 
     const cardFooter = document.createElement('div')
@@ -145,13 +145,10 @@ categ_form.appendChild(fragment2)
 
 
 
-//drag and drop de los cards
-btn_borrar.addEventListener('dragover', e=>
-{
-})
+//DRAG and DROG de los cards
+
 btn_borrar.addEventListener('dragleave', e=>
 {        
-    console.log(temp[0])
     var x= document.getElementById(temp[0])
-    lista_notas.removeChild(x)    
+    lista_notas.removeChild(x)      
 })

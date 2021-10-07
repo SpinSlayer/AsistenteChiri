@@ -11,44 +11,66 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-        
-    <link rel="stylesheet" href="/Navbar Responsive con BootStrap/navbar.css">  
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!--Iconos-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">    
+    
+    <!--BOOTSTRAP-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    
+    <!-- Navbar.css -->
+    <link rel="stylesheet" href="/Navbar/navbar.css">  
+
 </head>
 
-<body class="darkmode">
-    <header>
+<body class="darkmode" style="user-select: none;"> 
+
+    <!-- Barra de Navegación -->
+    <nav class="navbar navbar-expand-md navbar-light border-3 border-bottom border-primary" style="background-color: #B0E0E6; position: relative;">
         <div class="container-fluid">
-            <!--  Barra de Navegación-->
-            <nav class="navbar navbar-expand-md navbar-light border-3 border-bottom border-primary" style="background-color: #B0E0E6">
-                <div class="container-fluid">
-                    <a href="http://127.0.0.1:5500/calendario_con_notas/calendar.html#" class="navbar-brand">Calendario</a>
-                    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#MenuNavegacion">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div id="MenuNavegacion" class="collapse navbar-collapse">
-                        <ul class="navbar-nav ms-3">
-                            <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5500/Pizarra/Pizarra_de_notas.html">Pizarra</a></li>
-                            <li class="nav-item-dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                                    Usuario
-                                </a>
-                                <ul class="dropdown-menu border-3 border-primary" style="background-color: #B0E0E6;">
-                                    <li><a class="dropdown-item" href="http://127.0.0.1:5500/Usuario%20y%20Ajustes/datos.html">Datos de Usuario</a></li>
-                                    <li><a class="dropdown-item" href="http://127.0.0.1:5500/Usuario%20y%20Ajustes/ajustes.html">Ajustes</a></li>
-                                    <li><a class="dropdown-item" href="#">Cerrar Sesion</a></li>
-                                </ul>
-                            </li>
+            <div class=" nav-brand">
+                <a class="nav-link" href="../calendario_con_notas/calendar.html" >
+                    Calendario
+                </a>
+            </div>
+            
+            
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#MenuNavegacion">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="MenuNavegacion" class="collapse navbar-collapse container-fluid ">
+                <div class="navbar-nav container-fluid">
+
+                    <div class="nav-item">
+                        <a class="nav-link" href="../Pizarra/Pizarra_de_notas.html">
+                            Pizarra
+                        </a>
+                    </div>
+
+                    <div class="nav-item dropdown">
+                        <div class="nav-link dropdown-toggle" id="ddUsuario" data-bs-toggle="dropdown" >
+                          Usuario
+                        </div>
+                        <ul class="dropdown-menu border-3 border-primary fs-3" style="background-color: #B0E0E6;" aria-labelledby="ddUsuario">
+                            <li><a class="dropdown-item" href="../Usuario y Ajustes/datos.html">Datos de Usuario</a></li>
+                            <li><a class="dropdown-item" href="../Usuario y Ajustes/ajustes.html">Ajustes</a></li>
+                            <li><a class="dropdown-item" href="#">Cerrar Sesion</a></li>
                         </ul>
                     </div>
+
+                    <div class="ms-auto"></div>
+                    
+                    <div class=" nav-item" >
+                        <button id="bdark" class="btn material-icons-outlined dark fs-2">
+                            dark_mode
+                        </button>
+                    </div>
+                    
                 </div>
-            </nav>
+                
+            </div>
         </div>
-        <div>
-            <button id="bdark">Modo Oscuro</button>
-        </div>
-    </header>
+    </nav>
 
     <div class="container">
         <div class="calendar">
@@ -126,39 +148,38 @@
 <!----------FORMULARIO DE BOOTSTRAP------------------>
          <!-- Modal  Formulario Agregar-->
         <div class="modal fadec " id="agregar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content " id="modal_nueva_nota">
+            <div class="modal-dialog d-flex align-items-center min-vh-100 " >
+                <div class="modal-content  " id="modal_nueva_nota" >
                     <div class="modal-header">
                         <div class="col-11">
-                            <h4 class="modal-title text-center" id="exampleModalLabel">NUEVA NOTA</h4>
+                            <h2 class="modal-title text-center" id="exampleModalLabel">NUEVA NOTA</h2>
                         </div>
                     </div>
                     <div class="modal-body">
 
                         <!--Titulo de la nota-->
                         <div class="mb-3">
-                            <label for="tituloNota" class="form-label "><h4 >Título de la nota</h4></label>
-                            <input type="text" class="form-control" id="tituloNota">
+                            <label for="tituloNota" class="form-label "><h3 >Título de la nota</h3></label>
+                            <input type="text" class="form-control fs-3" id="tituloNota">
                         </div>
 
                         <!--Contenido de la nota-->
                         <div class="mb-3">
-                            <label for="contenidoNota" class="form-label"><h4>Contenido de la nota</h4></label>
-                            <textarea class="form-control" id="contenidoNota" rows="3"></textarea>
+                            <label for="contenidoNota" class="form-label"><h3>Contenido de la nota</h3></label>
+                            <textarea class="form-control fs-3" id="contenidoNota" rows="4"></textarea>
                         </div>
 
                         <!--Categoría de la nota-->
-                        <select id="categoriaNota" class="form-select fs-5 " aria-label="Default select example">
+                        <select id="categoriaNota" class="form-select fs-3 mb-4" aria-label="Default select example">
                             <option selected disabled>Seleccionar una categoría</option>
                         </select>
                         
-                        <p></p>
                         <input type="date" id="selectTiempo">
                     </div>
                     <p></p>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
-                        <button id="creaNota" type="button" class="btn btn-primary" data-bs-dismiss="modal">Guardar</button>
+                    <div class="modal-footer ">
+                        <button type="button" class="btn btn-danger fs-3" data-bs-dismiss="modal">Cancelar</button>
+                        <button id="creaNota" type="button" class="btn btn-primary fs-3" data-bs-dismiss="modal">Guardar</button>
                     </div>
                 </div>
             </div>

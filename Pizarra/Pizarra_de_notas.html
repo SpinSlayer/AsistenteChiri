@@ -6,75 +6,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Prueba Pantalla Pizarra_de_notas</title>
+    
     <!--BOOTSTRAP-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    
     <!--Iconos-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    
     <!--CSS-->
     <link rel="stylesheet" href="pizarraStyle.css">
-    <!--Tipografía-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Scheherazade+New&display=swap" rel="stylesheet">
+
     <!--moment.js-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" referrerpolicy="no-referrer"></script>
     
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-        
-    <link rel="stylesheet" href="/Navbar Responsive con BootStrap/navbar.css">  
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+    <!-- Navbar.css -->
+    <link rel="stylesheet" href="/Navbar/navbar.css">  
+    
 </head>
-<body  id= "bg-principal" class=" container-fluid darkmode" >
-    <header>
+<body  id= "bg-principal" class=" darkmode" style="user-select: none;" >
+    
+    <!-- Barra de Navegación -->
+    <nav class="navbar navbar-expand-md navbar-light border-3 border-bottom border-primary" style="background-color: #B0E0E6; position: relative;">
         <div class="container-fluid">
-            <!--  Barra de Navegación-->
-            <nav class="navbar navbar-expand-md navbar-light border-3 border-bottom border-primary" style="background-color: #B0E0E6">
-                <div class="container-fluid">
-                    <a href="http://127.0.0.1:5500/calendario_con_notas/calendar.html#" class="navbar-brand">Calendario</a>
-                    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#MenuNavegacion">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div id="MenuNavegacion" class="collapse navbar-collapse">
-                        <ul class="navbar-nav ms-3">
-                            <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5500/Pizarra/Pizarra_de_notas.html">Pizarra</a></li>
-                            <li class="nav-item-dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                                    Usuario
-                                </a>
-                                <ul class="dropdown-menu border-3 border-primary" style="background-color: #B0E0E6;">
-                                    <li><a class="dropdown-item" href="http://127.0.0.1:5500/Usuario%20y%20Ajustes/datos.html">Datos de Usuario</a></li>
-                                    <li><a class="dropdown-item" href="http://127.0.0.1:5500/Usuario%20y%20Ajustes/ajustes.html">Ajustes</a></li>
-                                    <li><a class="dropdown-item" href="#">Cerrar Sesion</a></li>
-                                </ul>
-                            </li>
+            <div class="nav-brand">
+                <a class="nav-link" href="../Pizarra/Pizarra_de_notas.html">
+                    Pizarra
+                </a>
+            </div>
+            
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#MenuNavegacion">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="MenuNavegacion" class="collapse navbar-collapse container-fluid ">
+                <div class="navbar-nav container-fluid">
+                    
+                    <div class=" nav-item">
+                        <a class="nav-link" href="../calendario_con_notas/calendar.html" >
+                            Calendario
+                        </a>
+                    </div>
+
+                    <div class="nav-item dropdown">
+                        <div class="nav-link dropdown-toggle" id="ddUsuario" data-bs-toggle="dropdown" >
+                            Usuario
+                        </div>
+                        <ul class="dropdown-menu border-3 border-primary" style="background-color: #B0E0E6;" aria-labelledby="ddUsuario">
+                            <li><a class="dropdown-item" href="../Usuario y Ajustes/datos.html">Datos de Usuario</a></li>
+                            <li><a class="dropdown-item" href="../Usuario y Ajustes/ajustes.html">Ajustes</a></li>
+                            <li><a class="dropdown-item" href="#">Cerrar Sesion</a></li>
                         </ul>
                     </div>
+
+                    <div class="ms-auto"></div>
+
+                    <div class=" nav-item" >
+                        <button id="bdark" class="btn material-icons-outlined dark fs-5">
+                            dark_mode
+                        </button>
+                    </div>
+                    
                 </div>
-            </nav>
-        </div>
-        <div>
-            <button id="bdark">Modo Oscuro</button>
-        </div>
-    </header>
-
-    <div class="row container mt-3">
-        <!--Lista de Notas-->
-        <div class="col-11 ">
-
-            <div id="lista_notas" class=" row row-cols-1 row-cols-md-3 g-4 ">
-                <!--Aquí van las notas-->
+                
             </div>
-
+        </div>
+    </nav>
+   
+    <div  class="row container  mx-auto ">
+        <!--Lista de Notas-->
+        <div id="lista_notas" class=" row row-cols-1 row-cols-md-3 g-4 mt-2">
+            <!--Aquí van las notas-->
         </div>
         
         <!--Botones de notas-->
-        <div id="btn_notas" class="col-1  ">
+        <div id="btn_notas" >
             <!--Boton Filtrar-->
            
             <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                  Categorias
+                <button class="btn btn-secondary dropdown-toggle " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="material-icons-outlined">
+                        filter_alt
+                    </span>
+                     
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                   <li><a class="dropdown-item" href="#" onclick="filterObjets('all')">Mostrar Todo</a></li>
@@ -154,7 +166,7 @@
     <script src="/calendario_con_notas/notif.js"></script>
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
 </body>
